@@ -6,16 +6,16 @@ library(tidypaleo)
 library(tidyverse)
 library(vegan)
 
-magsus <-read_excel("Emaotul_all_data.xlsx", sheet="magsus")
+magsus <-read_excel("Emaotul_all_data.xlsx", sheet="magnetic_susceptibility")
 Ti<-read_excel("Emaotul_all_data.xlsx", sheet="itrax")
-micro<-read_excel("Emaotul_all_data.xlsx", sheet="micro")
-macro<-read_excel("Emaotul_all_data.xlsx", sheet="macro")
+micro<-read_excel("Emaotul_all_data.xlsx", sheet="microcharcoal")
+macro<-read_excel("Emaotul_all_data.xlsx", sheet="macrocharcoal")
 AP_NAP<-read_excel("Emaotul_all_data.xlsx", sheet="AP_NAP")
-cn<-read_excel("Emaotul_all_data.xlsx", sheet="cn")
-chiro_per<-read_excel("Emaotul_all_data.xlsx", sheet="chiro")
+cn<-read_excel("Emaotul_all_data.xlsx", sheet="CN")
+chiro_per<-read_excel("Emaotul_all_data.xlsx", sheet="chironomids_%")
 pollen_counts<-read_excel("Emaotul_all_data.xlsx", sheet="pollen_counts")
-dino<-read_excel("Emaotul_all_data.xlsx", sheet="dino")
-precip<-read_excel("Emaotul_all_data.xlsx", sheet="precip")
+dino<-read_excel("Emaotul_all_data.xlsx", sheet="dinosterol")
+precip<-read_excel("Emaotul_all_data.xlsx", sheet="Precipitation")
   
 #DCA pollen####
 pollen_counts<-pollen_counts[-c(1,111)]
@@ -42,6 +42,14 @@ names(chiro_per)[1]<-"var"
 # average every 1cm
 Ti<-itrax_reduce(dataframe = Ti, by = 1)
 Ti<-Ti[-c(1)]
+
+names(AP/NAP)[2]<-"var"
+names(cn)[2]<-"var"
+names(dino)[2]<-"var"
+names(macro)[2]<-"var"
+names(micro)[2]<-"var"
+names(precip)[2]<-"var"
+names(Ti)[2]<-"var"
 
 AP_NAP$proxy<-"AP/NAP"
 chiro_per$proxy<-"Chironomid DCA1"
