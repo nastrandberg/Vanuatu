@@ -43,7 +43,7 @@ names(chiro_per)[1]<-"var"
 Ti<-itrax_reduce(dataframe = Ti, by = 1)
 Ti<-Ti[-c(1)]
 
-names(AP/NAP)[2]<-"var"
+names(AP_NAP)[2]<-"var"
 names(cn)[2]<-"var"
 names(dino)[2]<-"var"
 names(macro)[2]<-"var"
@@ -70,7 +70,7 @@ MCA <- tibble(ymin = 238, ymax = 250, xmin = -Inf, xmax = Inf)
 
 ####
 all %>% 
-  mutate(proxy = fct_relevel(proxy, "Magnetic susc.", "Ti/inc.", "Microcharcoal", "Macrocharcoal", "AP/NAP", "C/N", "Precip. rate", "Dinosterol", "Chironomid DCA1", "Pollen DCA1"))  %>%
+  mutate(proxy = fct_relevel(proxy, "Magnetic susc.", "Ti/inc.", "Precip. rate", "Dinosterol", "Microcharcoal", "Macrocharcoal", "AP/NAP", "C/N", "Chironomid DCA1", "Pollen DCA1"))  %>%
   ggplot(aes(x = var, y = depth)) +
   geom_lineh(size = 0.6, colour= "black") +
   scale_y_reverse() +
