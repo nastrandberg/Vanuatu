@@ -9,15 +9,15 @@ names(magsus)[1]<-"depth"
 names(magsus)[2]<-"Magnetic susc."
 Ti<-read.csv("Ti_10cm.csv")
 names(Ti)[2]<-"Ti/inc"
-micro<-read_excel("Emaotul_all_data.xlsx", sheet="micro")
+micro<-read_excel("Emaotul_all_data.xlsx", sheet="microcharcoal")
 names(micro)[2]<-"Microcharcoal"
-macro<-read_excel("Emaotul_all_data.xlsx", sheet="macro")
+macro<-read_excel("Emaotul_all_data.xlsx", sheet="macrocharcoal")
 names(macro)[2]<-"Macrocharcoal"
 pollen_counts<-read_excel("Emaotul_all_data.xlsx", sheet="pollen_counts")
-precip<-read_excel("Emaotul_all_data.xlsx", sheet="precip")
+precip<-read_excel("Emaotul_all_data.xlsx", sheet="Precipitation")
 names(precip)[2]<-"Precipitation"
 precip<-precip[-c(3)]
-zones<-read_excel("Emaotul_all_data.xlsx", sheet="zones")
+zones<-read_excel("Emaotul_all_data.xlsx", sheet="pollen_zones")
 
 x <- precip$depth
 y <- precip$Precipitation
